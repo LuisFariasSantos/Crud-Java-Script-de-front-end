@@ -1,0 +1,152 @@
+/*, 
+*::before,
+*::after{
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body{
+	height: 100%;
+	background-image: url('lion.png');
+	background-repeat: no-repeat;
+	color: white;
+	background-size: 100%;
+}
+*/
+.mostrar
+{
+	display: static;
+}
+.n_mostrar
+{
+	display: none;
+}
+/*#page_all
+{
+	/*background-image: url('lion.png');
+	background-size: 110vmax;
+	height: 50vmax;
+	width: 100vmax;*/
+	
+	/*overflow: hidden;	
+	margin: 100px;
+}*/
+*
+{
+	margin: 0%;
+	padding: 0%;
+	border: 0%;
+	vertical-align: baseline;
+	background-origin: border-box;
+}
+body
+{
+	background: #ecf0f1;
+	font-family: sans-serif;
+	padding-top: 330px;
+	transition: padding-top 0.5s ease;
+	background-image: url(fumaça.jpg);
+	background-attachment: fixed;
+	background-size: 100%;
+	background-repeat: no-repeat; 
+	color: white;
+	
+}
+header
+{
+	width: 100%;
+	height: 300px;
+	
+	text-align: center;
+	position: fixed;
+	top: 0;
+	overflow: hidden;
+	transition: all 0.5s ease;
+}
+header h1
+{
+	font-size: 42px;
+	color: white;
+	line-height: 230px;
+	font-weight: 300;
+	transition: all 0.3s ease;
+}
+header nav{
+	/*position: absolute;*/
+	bottom: 0;
+	height: 60px;
+	line-height: 60px;
+	background: rgba(232, 63, 0, 0.8);
+}
+header nav a{
+	color: white;
+	display: inline-block;
+	padding: 10px 15px;
+	line-height: 1;
+	text-decoration: none;
+	border-radius: 5px;
+}
+header nav a:hover{
+	background: rgba(0, 0,0, 0.2)p;
+}
+section{
+	/*margin: 10px;*/
+	padding: 10px;
+	border-radius: 4px;
+}
+body.sticky-header{
+	padding-top: 100px; 
+}
+body.sticky-header header{
+	height: 60px;
+	background: #e88300;
+}
+body.sticky-header header h1{
+	transform: scale(0,0);
+}
+nav{
+	margin: 0 auto;
+}
+form{
+	display: flex;
+	flex-direction: column;
+}
+input{
+	padding: 5px;
+	margin-bottom: 1px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	font-family: "Arial, sans-serif";
+	font-size: 14px;
+}
+button{
+	border: none;
+	color: #ffffff;
+	padding: 10px;
+	margin: 10px;
+	font-size: 14px;
+	line-height: 14px;
+	border-radius: 10px;
+	position: relative;
+	box-sizing: border-box;
+	cursor: pointer;
+	transition: all 400ms ease;
+}
+.efeito{
+		background-color: #28348A;
+}
+.efeito:before{
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 0px;
+	height: 34px;
+	background: rgba(255,255,255,0.3);
+	border-radius: 10px;
+	transition: all 2s ease;
+}
+.efeito:hover:before{
+	width: 100%;
+}

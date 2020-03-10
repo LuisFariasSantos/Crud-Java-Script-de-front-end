@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Iae POO2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="banco1.js"></script>
+	<script type="text/javascript" src="function's.js"></script>
+	<script type="text/javascript" src="function.js"></script>
+</head>
+<body>
+	<!--O programa deve ser realizado utilizando:
+
+SPA (Single Page Application)
+
+Classes
+
+LocalStorage
+
+Vetores
+
+Implemente uma agenda para armazenar os contatinhos da galera.
+
+Para isso, o programa deve apresentar:
+
+1-      Salvar- Feito
+
+2-      Achar- Feito
+
+3-      Mostrar cadastrados- Feito
+
+4-      Remover- Feito
+
+5-      Atualizar- Feito
+
+Todo o sistema deve operar com persistência de dados, armazenando os dados de forma “permanente” na máquina do usuário.
+
+Dica: Salve como vetor de objetos.
+
+Não esqueçam do JSON.parse e JSON.stringify.-->
+<div id="page_all">
+	<section id="menu" class="mostrar">
+		<header>
+			<h1>Menu</h1>
+				<nav>
+					<a href="#salvar" onclick="mostrar(op='1')">Salvar</a>
+					<a href="#achar" onclick="mostrar(op='2')">Buscar</a>
+					<a href="#geral" onclick="mostrar(op='3')">Mostrar Todos os Contatos</a>
+					<a href="#atualizar" onclick="mostrar(op='4')">Atualizar</a>
+					<a href="#remover" onclick="mostrar(op='5')">Remover</a>
+				</nav>
+		</header>
+	</section>
+	<section id="salvar" class="n_mostrar">
+		<header>
+			<h1>Salvar</h1>
+		</header>
+		<form id="save_form">
+			<table>
+				<tr>
+					<td>
+						<label>Nome:</label><input type="text" id="nome_salvar">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Número:</label><input type="number" id="nume_salvar">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Data de Nascimento:</label><input type="date" id="data_salvar">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>E-Mail:</label><input type="text" id="e_mail_salvar">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Endereço:</label><input type="text" id="endere_salvar">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Obs:</label><input type="text" id="obs_salvar">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="salvar(nome_salvar.value,nume_salvar.value,data_salvar.value,e_mail_salvar.value,endere_salvar.value,obs_salvar.value)" class="efeito">Salvar</button>
+						<button onclick="voltar(voltar(y='1'))" class="efeito">Voltar</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+	<section id="achar" class="n_mostrar">
+			<header>
+				<h1>Buscar</h1>
+			</header>
+			<form id="busca">
+				<table>
+					<tr>
+						<td>
+							<label>Digite o nome ou o telefone</label><input type="text" id="busca" autofocus>
+							<button onclick="buscar(busca.value,tipo='1')" class="efeito">Buscar</button>
+							<button onclick="voltar(y='2')" class="efeito">Voltar</button>
+						</td>
+					</tr>
+					<table id="b2" class="n_mostrar">
+						<tr>
+							<td>
+								<label>Nome:</label><input type="text" id="b_nome" disabled>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Celular</label><input type="number" id="b_cell" disabled>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Data de Nascimento:</label><input type="date"id="b_data" disabled>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>E-Mail:</label><input type="text" id="b_e_mail" disabled>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Endereço:</label><input type="text" id="b_endere" disabled>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Obs:</label><input type="text" id="b_obs" disabled>
+							</td>
+						</tr>
+					<tr>
+					</table>
+				</table>
+			</form>
+		</fieldset>
+	</section>
+	<section id="geral" class="n_mostrar">
+		<header>
+			<h1>Todos os Contatos</h1>
+		</header>
+		<section id="geral1">
+			
+		</section>
+	</section>
+	<section id="atualizar" class="n_mostrar">
+		<header>
+			<h1>Atualizar</h1>
+		</header>
+		<form id="att_form">
+			<table>
+				<tr>
+					<td>
+						<label>Digite o nome ou o telefone</label><input type="text" id="busca_att" autofocus>
+						<button onclick="buscar(busca_att.value,tipo='2')" class="efeito">Buscar</button>
+						<button onclick="voltar(y='4')" class="efeito">Voltar</button>
+					</td>
+				</tr>
+				<table id="at2" class="n_mostrar">
+					<tr>
+						<td>
+							<label>Nome:</label><input type="text" id="at_nome">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Celular</label><input type="number" id="at_cell">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Data de Nascimento:</label><input type="date" id="at_data">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>E-Mail:</label><input type="text" id="at_e_mail">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Endereço:</label><input type="text" id="at_endere">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Obs:</label><input type="text" id="at_obs">
+						</td>
+					</tr>
+				<tr>
+					<tr>
+						<td>
+							<button onclick="atualizar(at_nome.value,at_cell.value,at_data.value,at_e_mail.value,at_endere.value,at_obs.value)"  class="efeito">Salvar</button>
+						</td>
+					</tr>
+				</table>
+			</table>
+		</form>
+	</section>
+	<section id="remover" class="n_mostrar">
+			<header>
+			<h1>Remover</h1>
+		</header>
+		<form id="re_form">
+			<table>
+				<tr>
+					<td>
+						<label>Digite o nome ou o telefone</label><input type="text" id="busca_rem" autofocus>
+						<button onclick="buscar(busca_rem.value,tipo='3')" class="efeito">Buscar</button>
+						<button onclick="voltar(y='5')" class="efeito">Voltar</button>
+					</td>
+				</tr>
+				<table id="re2" class="n_mostrar">
+					<tr>
+						<td>
+							<label>Nome:</label><input type="text" id="re_nome" disabled>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Celular</label><input type="number" id="re_cell" disabled>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Data de Nascimento:</label><input type="date" id="re_data" disabled>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>E-Mail:</label><input type="text" id="re_e_mail" disabled>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Endereço:</label><input type="text" id="re_endere" disabled>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Obs:</label><input type="text" id="re_obs" disabled>
+						</td>
+					</tr>
+				<tr>
+				<tr>
+					<td>
+						<button onclick="remover()" class="efeito">Remover</button>
+					</td>
+				</tr>
+				</table>
+			</table>
+		</form>
+	</section>
+</div>
+</body>
+</html>
